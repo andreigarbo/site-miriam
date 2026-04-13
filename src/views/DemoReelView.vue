@@ -4,7 +4,7 @@ import VimeoPlayer from '../components/VimeoPlayer.vue'
 
 <template>
   <div class="vimeo-player-wrapper">
-    <VimeoPlayer videoId="414300409" />
+    <VimeoPlayer videoId="-1Lchlw0GbI" />
   </div>
 </template>
 
