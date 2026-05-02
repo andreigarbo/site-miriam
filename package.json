@@ -27,8 +27,11 @@
     "npm-run-all2": "^8.0.4",
     "oxlint": "~1.57.0",
     "prettier": "3.8.1",
+    "typescript": "^6.0.2",
     "vite": "^8.0.3",
-    "vite-plugin-vue-devtools": "^8.1.1"
+    "vite-plugin-vue-devtools": "^8.1.1",
+    "vue-svg-loader": "^0.16.0",
+    "vue-tsc": "^3.2.6"
   },
   "engines": {
     "node": "^20.19.0 || >=22.12.0"

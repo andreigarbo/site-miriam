@@ -18,11 +18,21 @@ import { RouterLink, RouterView } from 'vue-router'
 </template>
 
 <style>
+@font-face {
+  font-family: "Federo Regular";
+  src: url("/src/assets/fonts/Federo-Regular.ttf");
+}
+
+body {
+  font-family: "Federo Regular";
+}
+
 nav {
   width: 100%;
   font-size: 16px;
   text-align: center;
   margin-top: 2rem;
+  height: 5vh;
 }
 
 nav a {

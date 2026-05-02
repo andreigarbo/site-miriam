@@ -1,10 +1,16 @@
 <script setup>
 import { ref } from 'vue'
-const placeholderText = ref('homepage view')
 </script>
 
 <template>
-  <p class="placeholder">{{ placeholderText }}</p>
+  <img src="../assets/images/homepage/cover.png">
 </template>
 
-<style></style>
+<style>
+img {
+  width: 80vw;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+</style>
