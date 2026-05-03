@@ -61,5 +61,6 @@ nav a.router-link-exact-active:hover {
 #instagram-link img {
   height: 25px;
   width: auto;
+  margin-top: -20px;
 }
 </style>

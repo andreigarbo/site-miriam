@@ -67,8 +67,8 @@ function switchImageNext() {
 
 <style>
 .carousel-image {
-  height: 80vh;
-  width: auto;
+  height: auto;
+  width: 70vw;
   vertical-align: middle;
 }
 
@@ -101,6 +101,7 @@ function switchImageNext() {
 
 .chevron {
   height: 35px;
+  background-color: rgb(127, 127, 127);
   width: auto;
 }
 
