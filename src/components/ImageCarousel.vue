@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 const ChevronLeftPath = '/src/assets/svg/chevron-left-svgrepo-com.svg';
 const ChevronRightPath = '/src/assets/svg/chevron-right-svgrepo-com.svg';
 const props = defineProps<{
@@ -8,8 +8,17 @@ const props = defineProps<{
   height?: string;
 }>();
 
+// onMounted(() => {
+//   getLargestDimensionsChildImages();
+// });
+
+onMounted(() => {
+  console.log(props.width);
+});
+
 const propCarouselWidth = props.width;
 const propCarouselHeight = props.height;
+const propImagePaths = props.imagePaths;
 
 type switchImageDirection = 'prev' | 'next' | number;
 
@@ -43,6 +52,19 @@ function switchImagePrevious() {
 function switchImageNext() {
   switchImage('next');
 }
+
+// function getLargestDimensionsChildImages() {
+//   if (typeof propImagePaths != 'string') {
+//     const img = new Image();
+//     for (const currentPath in propImagePaths) {
+//       img.src = require(currentPath);
+//       img.onload = () => {
+//         console.log(img.width);
+//         console.log(img.height);
+//       };
+//     }
+//   }
+// }
 </script>
 
 <template>
@@ -72,7 +94,8 @@ function switchImageNext() {
 #carousel-container {
   width: v-bind(propCarouselWidth);
   height: v-bind(propCarouselHeight);
-  overflow: hidden;
+  /* overflow: hidden; */
+  background-size: contain;
 }
 
 .carousel-image {

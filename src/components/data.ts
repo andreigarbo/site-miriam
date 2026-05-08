@@ -42,7 +42,7 @@ function loadVisualDevMedia(): visualDevGridItem[] {
   const carouselAbrenhedPathObject = import.meta.glob('/src/assets/images/visualdev/abrenhed/*');
 
   visualDevGridObject.push(
-    buildVisualDevGridItem(carouselAbrenhedPathObject, 'Abrenhed Malediction', '60vw', 'auto'),
+    buildVisualDevGridItem(carouselAbrenhedPathObject, 'Abrenhed Malediction', '45vw', 'auto'),
   );
 
   const carouselAsimpthomaPathObject = import.meta.glob(
