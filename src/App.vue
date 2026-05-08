@@ -6,20 +6,27 @@ const InstagramPageRedirectLocation = 'https://www.instagram.com/misaki.cherry/'
 
 <template>
   <header>
-    <nav>
-      <RouterLink to="/">Home</RouterLink>
-      <RouterLink to="/visualdev">Visual Development</RouterLink>
-      <RouterLink to="/demoreel">Demo Reel</RouterLink>
-      <RouterLink to="/comics">Comics</RouterLink>
-      <RouterLink to="/personalwork">Personal Work</RouterLink>
-      <RouterLink to="/cv">CV</RouterLink>
-    </nav>
-    <a id="instagram-link" :href="InstagramPageRedirectLocation">
-      <img :src="InstagramLogo" />
-    </a>
+    <div id="header-div">
+      <div id="main-header-content">
+        <nav>
+          <RouterLink to="/">Home</RouterLink>
+          <RouterLink to="/visualdev">Visual Development</RouterLink>
+          <RouterLink to="/demoreel">Demo Reel</RouterLink>
+          <RouterLink to="/comics">Comics</RouterLink>
+          <RouterLink to="/personalwork">Personal Work</RouterLink>
+          <RouterLink to="/cv">CV</RouterLink>
+        </nav>
+        <a id="instagram-link" :href="InstagramPageRedirectLocation">
+          <img :src="InstagramLogo" />
+        </a>
+      </div>
+      <hr />
+    </div>
   </header>
 
-  <RouterView />
+  <div id="main-site-content">
+    <RouterView />
+  </div>
 </template>
 
 <style>
@@ -28,10 +35,21 @@ const InstagramPageRedirectLocation = 'https://www.instagram.com/misaki.cherry/'
   src: url('/src/assets/fonts/Federo-Regular.ttf');
 }
 
-header {
+body {
+  position: relative;
+}
+
+#main-header-content {
   display: flex;
+}
+
+header {
   align-items: center;
-  margin-top: 2rem;
+  padding-top: 2rem;
+  background-color: white;
+  position: sticky;
+  z-index: 1;
+  top: 0;
 }
 
 body {
@@ -42,11 +60,9 @@ nav {
   width: 100%;
   font-size: 16px;
   text-align: center;
-  height: 5vh;
 }
 
 nav a {
-  display: inline-block;
   padding: 0 1rem;
 }
 
@@ -61,6 +77,14 @@ nav a.router-link-exact-active:hover {
 #instagram-link img {
   height: 25px;
   width: auto;
-  margin-top: -20px;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
 }
 </style>

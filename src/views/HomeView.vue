@@ -1,9 +1,9 @@
 <script setup>
-import { ref } from 'vue'
+import { ref } from 'vue';
 </script>
 
 <template>
-  <img src="../assets/images/homepage/cover.png">
+  <img src="../assets/images/homepage/cover.png" />
 </template>
 
 <style>

@@ -3,10 +3,13 @@ import { ref } from 'vue';
 const ChevronLeftPath = '/src/assets/svg/chevron-left-svgrepo-com.svg';
 const ChevronRightPath = '/src/assets/svg/chevron-right-svgrepo-com.svg';
 const props = defineProps<{
-  imagePaths: string[];
-  width?: number;
-  height?: number;
+  imagePaths: string[] | string;
+  width?: string;
+  height?: string;
 }>();
+
+const propCarouselWidth = props.width;
+const propCarouselHeight = props.height;
 
 type switchImageDirection = 'prev' | 'next' | number;
 
@@ -66,9 +69,15 @@ function switchImageNext() {
 </template>
 
 <style>
+#carousel-container {
+  width: v-bind(propCarouselWidth);
+  height: v-bind(propCarouselHeight);
+  overflow: hidden;
+}
+
 .carousel-image {
   height: auto;
-  width: 70vw;
+  max-width: 100%;
   vertical-align: middle;
 }
 
