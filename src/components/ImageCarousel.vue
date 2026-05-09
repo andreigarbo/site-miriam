@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref } from 'vue';
 const ChevronLeftPath = '/src/assets/svg/chevron-left-svgrepo-com.svg';
 const ChevronRightPath = '/src/assets/svg/chevron-right-svgrepo-com.svg';
 const props = defineProps<{
@@ -7,14 +7,6 @@ const props = defineProps<{
   width?: string;
   height?: string;
 }>();
-
-// onMounted(() => {
-//   getLargestDimensionsChildImages();
-// });
-
-onMounted(() => {
-  console.log(props.width);
-});
 
 const propCarouselWidth = props.width;
 const propCarouselHeight = props.height;
@@ -52,19 +44,6 @@ function switchImagePrevious() {
 function switchImageNext() {
   switchImage('next');
 }
-
-// function getLargestDimensionsChildImages() {
-//   if (typeof propImagePaths != 'string') {
-//     const img = new Image();
-//     for (const currentPath in propImagePaths) {
-//       img.src = require(currentPath);
-//       img.onload = () => {
-//         console.log(img.width);
-//         console.log(img.height);
-//       };
-//     }
-//   }
-// }
 </script>
 
 <template>
@@ -91,17 +70,14 @@ function switchImageNext() {
 </template>
 
 <style>
-/* #carousel-container {
-  width: v-bind(propCarouselWidth);
-  height: v-bind(propCarouselHeight);
-  /* overflow: hidden; 
-  background-size: contain;
-} */
-
 .carousel-image {
   height: auto;
   max-width: 100%;
-  vertical-align: middle;
+  background-size: cover;
+  width: auto;
+  height: 60vh;
+  display: block;
+  margin: auto;
 }
 
 .chevron-button {
@@ -117,12 +93,6 @@ function switchImageNext() {
 
 #image-container {
   position: relative;
-}
-
-.image-carousel {
-  background-size: contain;
-  width: 60vw;
-  height: 60vh;
 }
 
 #prev-img-button {

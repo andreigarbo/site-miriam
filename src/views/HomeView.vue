@@ -3,11 +3,11 @@ import { ref } from 'vue';
 </script>
 
 <template>
-  <img src="../assets/images/homepage/cover.png" />
+  <img id="main-greeting-image" src="../assets/images/homepage/cover.png" />
 </template>
 
 <style>
-img {
+#main-greeting-image {
   width: 80vw;
   height: auto;
   display: block;

@@ -1,17 +1,23 @@
+type gridTypes = 'grid' | 'carousel';
+
 interface visualDevGridItem {
+  type: gridTypes;
   name: string;
-  src: string[] | string;
+  src: string[];
   width?: string;
   height?: string;
+  gridTemplateMap?: string[];
 }
 
 function buildVisualDevGridItem(
-  pathObject: Record<string, unknown> | string,
+  type: gridTypes,
+  pathObject: Record<string, unknown>,
   name: string,
   width?: string,
   height?: string,
+  gridTemplateMap?: string[],
 ): visualDevGridItem {
-  let acc: visualDevGridItem = { name: name, src: '' };
+  let acc: visualDevGridItem = { type: type, name: name, src: [] };
 
   if (width) {
     acc['width'] = width;
@@ -21,9 +27,8 @@ function buildVisualDevGridItem(
     acc['height'] = height;
   }
 
-  if (typeof pathObject === 'string') {
-    acc.src = pathObject;
-    return acc;
+  if (gridTemplateMap) {
+    acc['gridTemplateMap'] = gridTemplateMap;
   }
 
   const thisCarousel = new Array<string>();
@@ -39,22 +44,32 @@ function buildVisualDevGridItem(
 function loadVisualDevMedia(): visualDevGridItem[] {
   const visualDevGridObject: visualDevGridItem[] = new Array<visualDevGridItem>();
 
-  const carouselAbrenhedPathObject = import.meta.glob('/src/assets/images/visualdev/abrenhed/*');
-
+  const gridDiscotecaPathObject = import.meta.glob('/src/assets/images/visualdev/discoteca/*');
   visualDevGridObject.push(
-    buildVisualDevGridItem(carouselAbrenhedPathObject, 'Abrenhed Malediction', '45vw', 'auto'),
+    buildVisualDevGridItem('grid', gridDiscotecaPathObject, 'Discoteca Universul', '60vw', 'auto', [
+      'a a a',
+      'b b b',
+      'c d e',
+      'f g h',
+    ]),
+  );
+
+  const carouselAbrenhedPathObject = import.meta.glob('/src/assets/images/visualdev/abrenhed/*');
+  visualDevGridObject.push(
+    buildVisualDevGridItem(
+      'carousel',
+      carouselAbrenhedPathObject,
+      'Abrenhed Malediction',
+      '45vw',
+      'auto',
+    ),
   );
 
   const carouselAsimpthomaPathObject = import.meta.glob(
     '/src/assets/images/visualdev/asimpthoma/*',
   );
   visualDevGridObject.push(
-    buildVisualDevGridItem(carouselAsimpthomaPathObject, 'Asimpthoma', '60vw', 'auto'),
-  );
-
-  const carouselDiscotecaPathObject = import.meta.glob('/src/assets/images/visualdev/discoteca/*');
-  visualDevGridObject.push(
-    buildVisualDevGridItem(carouselDiscotecaPathObject, 'Discoteca Universul', '60vw', 'auto'),
+    buildVisualDevGridItem('carousel', carouselAsimpthomaPathObject, 'Asimpthoma', '60vw', 'auto'),
   );
 
   return visualDevGridObject;
