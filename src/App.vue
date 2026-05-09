@@ -1,6 +1,5 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router';
-const InstagramLogo = '/src/assets/svg/Instagram_Glyph_Black.svg';
 const InstagramPageRedirectLocation = 'https://www.instagram.com/misaki.cherry/';
 </script>
 
@@ -17,7 +16,7 @@ const InstagramPageRedirectLocation = 'https://www.instagram.com/misaki.cherry/'
           <RouterLink to="/cv">CV</RouterLink>
         </nav>
         <a id="instagram-link" :href="InstagramPageRedirectLocation">
-          <img :src="InstagramLogo" />
+          <img src="/svg/Instagram_Glyph_Black.svg" />
         </a>
       </div>
       <hr />

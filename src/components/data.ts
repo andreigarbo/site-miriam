@@ -34,8 +34,16 @@ function buildVisualDevGridItem(
   const thisCarousel = new Array<string>();
 
   for (const key in pathObject) {
-    thisCarousel.push(key);
+    const thisPath = key
+      .split('/')
+      .filter((x, i) => i >= 3)
+      .join('/');
+    thisCarousel.push(thisPath);
   }
+
+  //hacky and should definitely be changed
+
+  //hacky and should definitely be changed
 
   acc.src = thisCarousel;
   return acc;

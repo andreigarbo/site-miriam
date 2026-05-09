@@ -62,7 +62,6 @@ function switchImageNext() {
         v-for="(image, index) in props.imagePaths"
         :src="image"
         :key="index"
-        alt="test"
         @click="switchImage(index)"
       />
     </div>
