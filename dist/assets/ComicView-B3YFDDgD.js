@@ -1,0 +1,1 @@
+import{E as e,G as t,s as n,y as r}from"./runtime-core.esm-bundler-JXx-FQuP.js";var i={class:`placeholder`},a={__name:`ComicView`,setup(a){let o=e(`comic view`);return(e,a)=>(r(),n(`p`,i,t(o.value),1))}};export{a as default};
