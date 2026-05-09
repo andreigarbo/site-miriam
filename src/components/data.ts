@@ -41,6 +41,24 @@ function buildVisualDevGridItem(
   return acc;
 }
 
+function loadPersonalWorkMedia(): visualDevGridItem[] {
+  const visualDevGridObject: visualDevGridItem[] = new Array<visualDevGridItem>();
+
+  const gridMiscPersonalWork = import.meta.glob('/src/assets/images/personal/*');
+  visualDevGridObject.push(
+    buildVisualDevGridItem('grid', gridMiscPersonalWork, 'Personal Work', '60vw', 'auto', [
+      'a a c c',
+      'b b c c',
+      'd d e e',
+      'd d e e',
+      'f g g h',
+      'i j k k',
+    ]),
+  );
+
+  return visualDevGridObject;
+}
+
 function loadVisualDevMedia(): visualDevGridItem[] {
   const visualDevGridObject: visualDevGridItem[] = new Array<visualDevGridItem>();
 
@@ -75,4 +93,4 @@ function loadVisualDevMedia(): visualDevGridItem[] {
   return visualDevGridObject;
 }
 
-export { loadVisualDevMedia };
+export { loadVisualDevMedia, loadPersonalWorkMedia };

@@ -70,14 +70,11 @@ function switchImageNext() {
 </template>
 
 <style>
-.carousel-image {
-  height: auto;
-  max-width: 100%;
-  background-size: cover;
-  width: auto;
-  height: 60vh;
-  display: block;
-  margin: auto;
+#carousel-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .chevron-button {
@@ -87,12 +84,9 @@ function switchImageNext() {
   opacity: 100%;
 }
 
-.chevron-button:hover {
-  opacity: 30%;
-}
-
-#image-container {
-  position: relative;
+.chevron {
+  background-color: rgb(127, 127, 127);
+  width: auto;
 }
 
 #prev-img-button {
@@ -101,30 +95,80 @@ function switchImageNext() {
   left: 7%;
 }
 
+#image-container {
+  position: relative;
+}
+
 #next-img-button {
   position: absolute;
   top: 50%;
   right: 7%;
 }
 
-.chevron {
-  height: 35px;
-  background-color: rgb(127, 127, 127);
-  width: auto;
+.carousel-image {
+  background-size: cover;
+  display: block;
+  margin: auto;
 }
 
-#preview-selector {
-  padding-top: 5px;
-  display: flex;
-  justify-content: start;
-  overflow: scroll;
+@media (min-width: 600px) {
+  .chevron-button:hover {
+    opacity: 30%;
+  }
+
+  .chevron {
+    height: 2rem;
+  }
+
+  #preview-selector {
+    padding-top: 5px;
+    display: flex;
+    justify-content: start;
+    overflow: scroll;
+  }
+
+  .carousel-image {
+    max-width: 80vw;
+    max-height: 60vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  #preview-selector img {
+    height: 90px;
+    width: auto;
+    margin: 0;
+    margin-right: 5px;
+    padding: 0;
+  }
 }
 
-#preview-selector img {
-  height: 90px;
-  width: auto;
-  margin: 0;
-  margin-right: 5px;
-  padding: 0;
+@media only screen and (max-width: 600px) {
+  .chevron {
+    height: 1rem;
+  }
+
+  .carousel-image {
+    max-width: 90vw;
+    max-height: 60vh;
+    width: auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  #preview-selector {
+    height: 5vh;
+    padding-top: 5px;
+    display: flex;
+    width: 80vw;
+    justify-content: start;
+    overflow: scroll;
+  }
+
+  #preview-selector img {
+    margin: 0;
+    margin-right: 5px;
+    padding: 0;
+  }
 }
 </style>

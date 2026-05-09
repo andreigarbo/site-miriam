@@ -27,17 +27,36 @@ console.log(propGridTemplateString);
 </template>
 
 <style>
-#grid-container {
-  margin: auto;
-  display: grid;
-  grid-template-areas: v-bind(propGridTemplateString);
-  width: 70vw;
-  gap: 20px;
-  height: auto;
+@media (min-width: 600px) {
+  #grid-container {
+    margin: auto;
+    display: grid;
+    grid-template-areas: v-bind(propGridTemplateString);
+    width: 70vw;
+    gap: 20px;
+    height: auto;
+  }
 }
+@media only screen and (max-width: 600px) {
+  #grid-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 .grid-item img {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
+
+/* img:hover {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+  transform: translate(-50%, -50%) scale(1);
+  width: auto;
+  height: 80vh;
+} */
 </style>

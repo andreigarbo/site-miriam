@@ -12,7 +12,7 @@ const InstagramPageRedirectLocation = 'https://www.instagram.com/misaki.cherry/'
           <RouterLink to="/">Home</RouterLink>
           <RouterLink to="/visualdev">Visual Development</RouterLink>
           <RouterLink to="/demoreel">Demo Reel</RouterLink>
-          <RouterLink to="/comics">Comics</RouterLink>
+          <!-- <RouterLink to="/comics">Comics</RouterLink> -->
           <RouterLink to="/personalwork">Personal Work</RouterLink>
           <RouterLink to="/cv">CV</RouterLink>
         </nav>
@@ -30,40 +30,26 @@ const InstagramPageRedirectLocation = 'https://www.instagram.com/misaki.cherry/'
 </template>
 
 <style>
-@font-face {
-  font-family: 'Federo Regular';
-  src: url('/src/assets/fonts/Federo-Regular.ttf');
+html {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
 }
 
 body {
   position: relative;
-}
-
-#main-header-content {
-  display: flex;
-}
-
-header {
-  align-items: center;
-  padding-top: 2rem;
-  background-color: white;
-  position: sticky;
-  z-index: 1;
-  top: 0;
-}
-
-body {
   font-family: 'Federo Regular';
 }
 
 nav {
   width: 100%;
-  font-size: 16px;
   text-align: center;
 }
 
-nav a {
-  padding: 0 1rem;
+#main-header-content {
+  display: flex;
 }
 
 nav a.router-link-exact-active {
@@ -74,17 +60,52 @@ nav a.router-link-exact-active:hover {
   background-color: transparent;
 }
 
-#instagram-link img {
-  height: 25px;
-  width: auto;
-}
-
 hr {
-  display: block;
+  /* display: block; */
   height: 1px;
   border: 0;
   border-top: 1px solid #ccc;
   margin: 1em 0;
   padding: 0;
+  width: 100%;
+}
+
+@media (min-width: 1200px) {
+  nav {
+    font-size: 16px;
+  }
+
+  header {
+    width: 100%;
+    align-items: center;
+    padding-top: 1rem;
+    background-color: white;
+    position: sticky;
+    z-index: 1;
+    top: 0;
+  }
+
+  nav a {
+    padding: 0 1rem;
+  }
+
+  #instagram-link img {
+    height: 25px;
+    width: auto;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  nav {
+    font-size: 0.9rem;
+  }
+  nav a {
+    padding: 0 0.5rem;
+  }
+
+  #instagram-link img {
+    height: 18px;
+    width: auto;
+  }
 }
 </style>

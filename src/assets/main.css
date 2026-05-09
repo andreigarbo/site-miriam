@@ -4,20 +4,13 @@
   display: block;
   max-width: 1480px;
   margin: 0 auto;
-  padding: 2rem;
+  /* padding: 2rem; */
   font-weight: normal;
 }
 
-@media (hover: hover) {
-  a:hover {
-    opacity: 60%;
-  }
-}
-
-@media (min-width: 1024px) {
-  #app {
-    padding: 0 2rem;
-  }
+@font-face {
+  font-family: 'Federo Regular';
+  src: url('/src/assets/fonts/Federo-Regular.ttf');
 }
 
 a {
