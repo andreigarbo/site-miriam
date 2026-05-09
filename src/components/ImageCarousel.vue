@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-const ChevronLeftPath = '/src/assets/svg/chevron-left-svgrepo-com.svg';
-const ChevronRightPath = '/src/assets/svg/chevron-right-svgrepo-com.svg';
+const ChevronLeftPath = '/svg/chevron-left-svgrepo-com.svg';
+const ChevronRightPath = '/svg/chevron-right-svgrepo-com.svg';
 const props = defineProps<{
   imagePaths: string[] | string;
   width?: string;
