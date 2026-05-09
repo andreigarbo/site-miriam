@@ -38,12 +38,11 @@ function buildVisualDevGridItem(
       .split('/')
       .filter((x, i) => i >= 3)
       .join('/');
-    thisCarousel.push(new URL(thisPath, import.meta.url).href);
+    console.log(thisPath);
+    //hacky and should definitely be changed
+    thisCarousel.push(new URL(thisPath, import.meta.url).href.replace('assets/', ''));
+    //hacky and should definitely be changed
   }
-
-  //hacky and should definitely be changed
-
-  //hacky and should definitely be changed
 
   acc.src = thisCarousel;
   return acc;

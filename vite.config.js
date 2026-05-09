@@ -13,6 +13,5 @@ export default defineConfig({
     rollupOptions: {
       input: ['src/main.js', './index.html'],
     },
-    publicDir: 'public',
   },
 });
