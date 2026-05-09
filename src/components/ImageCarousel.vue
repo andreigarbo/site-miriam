@@ -91,12 +91,12 @@ function switchImageNext() {
 </template>
 
 <style>
-#carousel-container {
+/* #carousel-container {
   width: v-bind(propCarouselWidth);
   height: v-bind(propCarouselHeight);
-  /* overflow: hidden; */
+  /* overflow: hidden; 
   background-size: contain;
-}
+} */
 
 .carousel-image {
   height: auto;
@@ -117,6 +117,12 @@ function switchImageNext() {
 
 #image-container {
   position: relative;
+}
+
+.image-carousel {
+  background-size: contain;
+  width: 60vw;
+  height: 60vh;
 }
 
 #prev-img-button {
