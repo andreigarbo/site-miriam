@@ -11,7 +11,7 @@
     "lint:oxlint": "oxlint . --fix",
     "lint:eslint": "eslint . --fix --cache",
     "format": "prettier --write --experimental-cli src/",
-    "pages-deploy": "npm run build && cd dist && git add --all && git commit -m \"Deploying to github pages via npm script\" && git subtree push --prefix dist origin gh-pages"
+    "pages-deploy": "npm run build && cd dist && git add --all && cd .. && git commit -m \"Deploying to github pages via npm script\" && git subtree push --prefix dist origin gh-pages"
   },
   "dependencies": {
     "vue": "^3.5.31",
