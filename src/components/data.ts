@@ -55,7 +55,7 @@ function loadPersonalWorkMedia(): visualDevGridItem[] {
 
   const gridMiscPersonalWork = import.meta.glob('/src/assets/images/personal/*');
   visualDevGridObject.push(
-    buildVisualDevGridItem('grid', gridMiscPersonalWork, 'Personal Work', '60vw', 'auto', [
+    buildVisualDevGridItem('grid', gridMiscPersonalWork, 'Personal Work test', '60vw', 'auto', [
       'a a c c',
       'b b c c',
       'd d e e',
