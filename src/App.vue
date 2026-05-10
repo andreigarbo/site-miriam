@@ -8,12 +8,12 @@ const InstagramPageRedirectLocation = 'https://www.instagram.com/misaki.cherry/'
     <div id="header-div">
       <div id="main-header-content">
         <nav>
-          <RouterLink to="/">Home</RouterLink>
-          <RouterLink to="/visualdev">Visual Development</RouterLink>
-          <RouterLink to="/demoreel">Demo Reel</RouterLink>
-          <!-- <RouterLink to="/comics">Comics</RouterLink> -->
-          <RouterLink to="/personalwork">Personal Work</RouterLink>
-          <RouterLink to="/cv">CV</RouterLink>
+          <RouterLink class="header-router-link" to="/">Home</RouterLink>
+          <RouterLink class="header-router-link" to="/visualdev">Visual Development</RouterLink>
+          <!-- <RouterLink class="header-router-link" to="/demoreel">Demo Reel</RouterLink> -->
+          <RouterLink class="header-router-link" to="/personalwork">Personal Work</RouterLink>
+          <RouterLink class="header-router-link" to="/comics">Comics</RouterLink>
+          <!-- <RouterLink class="header-router-link" to="/cv">About</RouterLink> -->
         </nav>
         <a id="instagram-link" :href="InstagramPageRedirectLocation">
           <img src="/svg/Instagram_Glyph_Black.svg" />
@@ -69,7 +69,7 @@ hr {
   width: 100%;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 600px) {
   nav {
     font-size: 16px;
   }
@@ -96,8 +96,12 @@ hr {
 
 @media only screen and (max-width: 600px) {
   nav {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     font-size: 0.9rem;
   }
+
   nav a {
     padding: 0 0.5rem;
   }
@@ -105,6 +109,11 @@ hr {
   #instagram-link img {
     height: 18px;
     width: auto;
+    padding-right: 3vw;
+  }
+
+  #main-header-content {
+    align-items: center;
   }
 }
 </style>

@@ -1,10 +1,15 @@
 <script setup>
-import { ref } from 'vue'
-const placeholderText = ref('comic view')
+import { ref } from 'vue';
+const placeholderText = ref('Coming soon!');
 </script>
 
 <template>
-  <p class="placeholder">{{ placeholderText }}</p>
+  <p class="coming-soon-text">{{ placeholderText }}</p>
 </template>
 
-<style></style>
+<style>
+.coming-soon-text {
+  text-align: center;
+  font-size: 3rem;
+}
+</style>

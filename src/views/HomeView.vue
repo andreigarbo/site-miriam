@@ -3,7 +3,7 @@ import { ref } from 'vue';
 </script>
 
 <template>
-  <img id="main-greeting-image" src="../assets/images/homepage/cover.png" />
+  <img id="main-greeting-image" src="/images/homepage/cover.png" />
 </template>
 
 <style>
