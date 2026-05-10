@@ -38,9 +38,11 @@ function buildVisualDevGridItem(
       .split('/')
       .filter((x, i) => i >= 3)
       .join('/');
-    console.log(thisPath);
     //hacky and should definitely be changed
-    thisCarousel.push(new URL(thisPath, import.meta.url).href.replace('assets/', ''));
+    console.log('thisPath -> ' + thisPath);
+    const thisUrl = new URL(thisPath, import.meta.url).href.replace('assets/', '');
+    console.log('thisUrl -> ' + thisUrl);
+    console.log('the built url -> ' + new URL(thisPath, import.meta.url).href);
     //hacky and should definitely be changed
   }
 

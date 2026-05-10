@@ -11,7 +11,6 @@ if (!props.gridTemplateMap) {
 }
 
 const propGridTemplateString = props.gridTemplateMap.map((row) => `"${row}"`).join(' ');
-console.log(propGridTemplateString);
 </script>
 
 <template>
