@@ -1,7 +1,5 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-const ChevronLeftPath = '/svg/chevron-left-svgrepo-com.svg';
-const ChevronRightPath = '/svg/chevron-right-svgrepo-com.svg';
 const props = defineProps<{
   imagePaths: string[] | string;
   width?: string;
@@ -51,10 +49,10 @@ function switchImageNext() {
     <div id="image-container">
       <img class="carousel-image" :src="currentImagePath" />
       <button class="chevron-button" id="prev-img-button" @click="switchImagePrevious">
-        <img class="chevron" :src="ChevronLeftPath" />
+        <img class="chevron" src="/svg/chevron-left-svgrepo-com.svg" />
       </button>
       <button class="chevron-button" id="next-img-button" @click="switchImageNext">
-        <img class="chevron" :src="ChevronRightPath" />
+        <img class="chevron" src="/svg/chevron-right-svgrepo-com.svg" />
       </button>
     </div>
     <div id="preview-selector">

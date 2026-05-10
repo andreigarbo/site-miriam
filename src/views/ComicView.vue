@@ -10,6 +10,6 @@ const placeholderText = ref('Coming soon!');
 <style>
 .coming-soon-text {
   text-align: center;
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 </style>
