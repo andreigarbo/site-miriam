@@ -1,6 +1,9 @@
 <script setup>
+import { onMounted } from 'vue';
+import { reportAnalyticsData } from './utils/AnalyticsUtils';
 import { RouterLink, RouterView } from 'vue-router';
 const InstagramPageRedirectLocation = 'https://www.instagram.com/misaki.cherry/';
+onMounted(() => reportAnalyticsData());
 </script>
 
 <template>
@@ -10,7 +13,7 @@ const InstagramPageRedirectLocation = 'https://www.instagram.com/misaki.cherry/'
         <nav>
           <RouterLink class="header-router-link" to="/">Home</RouterLink>
           <RouterLink class="header-router-link" to="/visualdev">Visual Development</RouterLink>
-          <!-- <RouterLink class="header-router-link" to="/demoreel">Demo Reel</RouterLink> -->
+          <RouterLink class="header-router-link" to="/demoreel">Demo Reel</RouterLink>
           <RouterLink class="header-router-link" to="/personalwork">Personal Work</RouterLink>
           <RouterLink class="header-router-link" to="/comics">Comics</RouterLink>
           <!-- <RouterLink class="header-router-link" to="/cv">About</RouterLink> -->

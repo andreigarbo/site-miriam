@@ -10,9 +10,9 @@ const props = defineProps({
 <template>
   <iframe
     v-if="videoId"
-    width="800"
-    height="600"
     title="YouTube video player"
+    height="100%"
+    width="100%"
     frameborder="0"
     :src="`https://www.youtube.com/embed/${props.videoId}`"
     allow="

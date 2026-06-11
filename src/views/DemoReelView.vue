@@ -4,7 +4,7 @@ import VideoEmbedPlayer from '../components/VideoEmbedPlayer.vue';
 
 <template>
   <div class="embed-player-wrapper">
-    <VideoEmbedPlayer id="embed-player" videoId="-1Lchlw0GbI" />
+    <VideoEmbedPlayer id="embed-player" videoId="pnkZ6bbQu7o" />
   </div>
 </template>
 
@@ -23,6 +23,8 @@ import VideoEmbedPlayer from '../components/VideoEmbedPlayer.vue';
   .embed-player-wrapper {
     text-align: center;
     margin: auto;
+    height: 60vh;
+    width: 106vh;
     padding-top: 10vh;
   }
 }
