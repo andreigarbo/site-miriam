@@ -1,8 +1,7 @@
 <script setup>
 import { onMounted } from 'vue';
-import { reportAnalyticsData } from './utils/AnalyticsUtils';
+import { reportAnalyticsData } from './components/analytics';
 import { RouterLink, RouterView } from 'vue-router';
-const InstagramPageRedirectLocation = 'https://www.instagram.com/misaki.cherry/';
 onMounted(() => reportAnalyticsData());
 </script>
 
@@ -11,16 +10,19 @@ onMounted(() => reportAnalyticsData());
     <div id="header-div">
       <div id="main-header-content">
         <nav>
-          <RouterLink class="header-router-link" to="/">Home</RouterLink>
+          <RouterLink class="header-router-link" to="/">
+            <div id="logo-animation-container">
+              <div id="logo-animation"></div>
+            </div>
+          </RouterLink>
           <RouterLink class="header-router-link" to="/visualdev">Visual Development</RouterLink>
           <RouterLink class="header-router-link" to="/demoreel">Demo Reel</RouterLink>
           <RouterLink class="header-router-link" to="/personalwork">Personal Work</RouterLink>
+          <RouterLink class="header-router-link" to="/professionalwork"
+            >Professional Work</RouterLink
+          >
           <RouterLink class="header-router-link" to="/comics">Comics</RouterLink>
-          <!-- <RouterLink class="header-router-link" to="/cv">About</RouterLink> -->
         </nav>
-        <a id="instagram-link" :href="InstagramPageRedirectLocation">
-          <img src="/svg/Instagram_Glyph_Black.svg" />
-        </a>
       </div>
       <hr />
     </div>
@@ -29,6 +31,8 @@ onMounted(() => reportAnalyticsData());
   <div id="main-site-content">
     <RouterView />
   </div>
+
+  <div id="footer"></div>
 </template>
 
 <style>
@@ -45,17 +49,64 @@ body {
   font-family: 'Federo Regular';
 }
 
+#footer {
+  height: 150px;
+  width: 100%;
+}
+
 nav {
   width: 100%;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  padding: 0;
+  margin: 0;
 }
 
 #main-header-content {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.header-router-link {
+  align-self: center;
+  justify-self: center;
+}
+
+#logo-animation {
+  width: 500px;
+  height: 500px;
+  display: block;
+  /* align-self: flex-start; */
+  background: transparent url('/images/logo/spritesheet.png') 0 0 no-repeat;
+  animation: moving-logo 1s steps(9) infinite;
+}
+
+@keyframes moving-logo {
+  from {
+    background-position: 0px;
+  }
+  to {
+    background-position: -4501px;
+  }
+}
+
+#logo-container img {
+  width: 100%;
+}
+
+nav a {
+  font-size: 1.3rem;
 }
 
 nav a.router-link-exact-active {
-  color: red;
+  color: var(--text-pink-color);
 }
 
 nav a.router-link-exact-active:hover {
@@ -75,6 +126,15 @@ hr {
 @media (min-width: 600px) {
   nav {
     font-size: 16px;
+  }
+
+  #logo-animation-container {
+    width: 100px;
+    height: 100px;
+  }
+
+  #logo-animation {
+    transform: translate(-40%, -40%) scale(0.2);
   }
 
   header {
@@ -105,8 +165,17 @@ hr {
     font-size: 0.9rem;
   }
 
+  #logo-animation-container {
+    width: 50px;
+    height: 50px;
+  }
+
+  #logo-animation {
+    transform: translate(-45%, -45%) scale(0.1);
+  }
+
   nav a {
-    padding: 0 0.5rem;
+    padding: 0;
   }
 
   #instagram-link img {

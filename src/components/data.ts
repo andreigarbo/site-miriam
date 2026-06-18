@@ -35,17 +35,17 @@ function buildVisualDevGridItem(
 
   for (const key in pathObject) {
     //PROD config
-    const thisPath = key
-      .split('/')
-      .filter((x, i) => i >= 3)
-      .join('/');
+    // const thisPath = key
+    //   .split('/')
+    //   .filter((x, i) => i >= 3)
+    //   .join('/');
 
-    const thisUrl = new URL(thisPath, import.meta.url).href.replace('assets/', '');
-    thisCarousel.push(thisUrl);
+    // const thisUrl = new URL(thisPath, import.meta.url).href.replace('assets/', '');
+    // thisCarousel.push(thisUrl);
     //PROD config
 
     //DEV Config
-    // thisCarousel.push(key);
+    thisCarousel.push(key);
     //DEV Config
   }
 
@@ -105,4 +105,21 @@ function loadVisualDevMedia(): visualDevGridItem[] {
   return visualDevGridObject;
 }
 
-export { loadVisualDevMedia, loadPersonalWorkMedia };
+function loadCatMedia(): visualDevGridItem[] {
+  const catEasterEggGridObject: visualDevGridItem[] = new Array<visualDevGridItem>();
+
+  const gridCatPathObject = import.meta.glob('/src/assets/images/cats/*');
+  catEasterEggGridObject.push(
+    buildVisualDevGridItem('grid', gridCatPathObject, 'Cats!', '60vw', 'auto', [
+      'a b c',
+      'd e f',
+      'g h i',
+      'j k l',
+      'm n',
+    ]),
+  );
+
+  return catEasterEggGridObject;
+}
+
+export { loadVisualDevMedia, loadPersonalWorkMedia, loadCatMedia };

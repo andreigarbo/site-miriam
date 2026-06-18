@@ -1,5 +1,5 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import { createRouter, createWebHistory } from 'vue-router';
+import HomeView from '../views/HomeView.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -33,11 +33,21 @@ const router = createRouter({
       component: () => import('../views/PersonalWorkView.vue'),
     },
     {
+      path: '/professionalwork',
+      name: 'professional work',
+      component: () => import('../views/ProfessionalWorkView.vue'),
+    },
+    {
       path: '/cv',
       name: 'cv',
       component: () => import('../views/CVView.vue'),
     },
+    {
+      path: '/prajeldaisybiscoff',
+      name: 'prajeldaisybiscoff',
+      component: () => import('../views/CatEasterEgg.vue'),
+    },
   ],
-})
+});
 
-export default router
+export default router;
