@@ -37,6 +37,10 @@ const router = createRouter({
       name: 'cv',
       component: () => import('../views/CVView.vue'),
     },
+    {
+      path: '/:catchAll(.*)*',
+      redirect: '/',
+    },
   ],
 });
 
