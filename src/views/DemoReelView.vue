@@ -4,7 +4,7 @@ import VideoEmbedPlayer from '../components/VideoEmbedPlayer.vue';
 
 <template>
   <div class="embed-player-wrapper">
-    <VideoEmbedPlayer id="embed-player" videoId="pnkZ6bbQu7o" />
+    <VideoEmbedPlayer id="embed-player" videoId="ii3heKtbfC8" />
   </div>
 </template>
 
