@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { onMounted } from 'vue';
-import { reportAnalyticsData } from './components/analytics';
+// import { onMounted } from 'vue';
+// import { reportAnalyticsData } from './components/analytics';
 import { RouterLink, RouterView } from 'vue-router';
 
 // onMounted(() => reportAnalyticsData());
