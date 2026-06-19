@@ -11,7 +11,7 @@
     "lint:oxlint": "oxlint . --fix",
     "lint:eslint": "eslint . --fix --cache",
     "format": "prettier --write --experimental-cli src/",
-    "pages-deploy": "npm run build && cd dist && cp index.html 404.html && touch CNAME && echo \"misakicherry.com\" > CNAME && git add --all && cd .. && git commit -m \"Deploying to github pages via npm script\" && git subtree split --prefix dist -b pages && git push -f origin pages:pages && git branch -D pages && rm -r dist"
+    "pages-deploy": "npm run build && cd dist && cp index.html 404.html && touch CNAME && echo \"misakicherry.com\" > CNAME && git add --all && cd .. && git subtree split --prefix dist -b pages && git push -f origin pages:pages && git branch -D pages && rm -r dist"
   },
   "dependencies": {
     "vue": "^3.5.31",

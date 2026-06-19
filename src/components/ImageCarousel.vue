@@ -69,7 +69,7 @@ function switchImageNext() {
 <style>
 button {
   position: relative;
-  z-index: 1;
+  /* z-index: 1; */
   display: inline-block;
 }
 #carousel-container {
