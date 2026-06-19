@@ -1,7 +1,8 @@
-<script setup>
+<script setup lang="ts">
 import { onMounted } from 'vue';
 import { reportAnalyticsData } from './components/analytics';
 import { RouterLink, RouterView } from 'vue-router';
+
 onMounted(() => reportAnalyticsData());
 </script>
 
@@ -93,7 +94,7 @@ nav {
     background-position: 0px;
   }
   to {
-    background-position: -4501px;
+    background-position: -4500px;
   }
 }
 
@@ -159,10 +160,10 @@ hr {
 
 @media only screen and (max-width: 600px) {
   nav {
+    height: 16vh;
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr;
-    font-size: 0.9rem;
   }
 
   #logo-animation-container {
@@ -176,6 +177,7 @@ hr {
 
   nav a {
     padding: 0;
+    font-size: 1.1rem;
   }
 
   #instagram-link img {

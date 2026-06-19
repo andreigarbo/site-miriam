@@ -79,8 +79,9 @@ function loadVisualDevMedia(): visualDevGridItem[] {
     buildVisualDevGridItem('grid', gridDiscotecaPathObject, 'Discoteca Universul', '60vw', 'auto', [
       'a a a',
       'b b b',
-      'c d e',
-      'f g h',
+      'c c c',
+      'd e f',
+      'g h i',
     ]),
   );
 
@@ -115,7 +116,7 @@ function loadCatMedia(): visualDevGridItem[] {
       'd e f',
       'g h i',
       'j k l',
-      'm n',
+      'm n o',
     ]),
   );
 

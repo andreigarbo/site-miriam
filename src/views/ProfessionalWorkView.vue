@@ -18,7 +18,7 @@ function onSubmitForm(e) {
   passwordSuccessField.classList.remove('hidden');
   setTimeout(() => {
     passwordSuccessField.classList.add('hidden');
-  }, 1500);
+  }, 2000);
 }
 </script>
 
@@ -49,6 +49,10 @@ form {
 
 form > * {
   margin-top: 20px;
+}
+
+#form-submit-button {
+  font-family: 'Federo Regular';
 }
 
 #password-input-field {

@@ -24,8 +24,4 @@ const gridPathObjects = catMedia.filter((mediaItem) => mediaItem.type == 'grid')
   font-size: 2rem;
   text-align: center;
 }
-
-img {
-  width: 20px;
-}
 </style>

@@ -4,8 +4,6 @@
 <svg
    version="1.1"
    id="svg1"
-   width="2560"
-   height="1440"
    viewBox="0 0 2560 1440"
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
@@ -23,21 +21,21 @@
        id="image1" />
     <rect
        style="fill:#cd948b;fill-opacity:0"
-       id="instagram-logo"
+       id="instagram-logo-rect"
        width="119.70221"
        height="108.98269"
        x="1679.4044"
        y="1123.7717" />
     <rect
        style="fill:#cd948b;fill-opacity:0"
-       id="mail-logo"
+       id="mail-logo-rect"
        width="139.35484"
        height="103.62283"
        x="1829.4789"
        y="1127.345" />
     <rect
        style="fill:#cd948b;fill-opacity:0"
-       id="linkedin-logo"
+       id="linkedin-logo-rect"
        width="116.12904"
        height="117.91563"
        x="2004.5658"

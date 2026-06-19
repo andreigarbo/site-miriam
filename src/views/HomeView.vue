@@ -1,47 +1,58 @@
 <script setup lang="ts">
-import { onBeforeMount, onMounted, ref } from 'vue';
-import homeBannerSVG from '../assets/svg/cover.svg';
+import { onMounted } from 'vue';
+import homeBannerSVGRaw from '../assets/svg/cover.svg?raw';
 
 const InstagramPageRedirectLocation = 'https://www.instagram.com/misaki.cherry/';
 const LinkedInRedirectLocation = 'https://linkedin.com/in/miriam-arvunescu-27b3bb2b2';
 const MailToLink = 'mailto:miriam.arvunescu@gmail.com';
 
 function addLinkToSVGElements() {
-  const instagramLogoRect = document.querySelector('#instagram-logo');
-  const mailToLogoRect = document.querySelector('#mail-logo');
-  const linkedInLogoRect = document.querySelector('#linkedin-logo');
+  const instagramLogoRect = document.querySelector('#instagram-logo-rect');
+  const mailToLogoRect = document.querySelector('#mail-logo-rect');
+  const linkedInLogoRect = document.querySelector('#linkedin-logo-rect');
 
-  if (instagramLogoRect instanceof HTMLElement) {
+  if (instagramLogoRect instanceof SVGElement) {
     instagramLogoRect.onclick = () => {
       location.href = InstagramPageRedirectLocation;
     };
-  } else console.log(instagramLogoRect);
-  if (mailToLogoRect instanceof HTMLElement) {
+  }
+
+  if (mailToLogoRect instanceof SVGElement) {
     mailToLogoRect.onclick = () => {
       location.href = MailToLink;
     };
-  } else console.log(instagramLogoRect);
-  if (linkedInLogoRect instanceof HTMLElement) {
+  }
+
+  if (linkedInLogoRect instanceof SVGElement) {
     linkedInLogoRect.onclick = () => {
       location.href = LinkedInRedirectLocation;
     };
-  } else console.log(instagramLogoRect);
+  }
 }
 
 onMounted(() => addLinkToSVGElements());
 </script>
 
 <template>
-  <object id="main-greeting-image" :data="homeBannerSVG" />
+  <div id="main-greeting-image">
+    <div v-html="homeBannerSVGRaw" id="main-greeting-svg"></div>
+  </div>
 </template>
 
 <style>
+#main-greeting-svg {
+  display: block;
+  margin: auto;
+}
+
 @media (min-width: 600px) {
   #main-greeting-image {
     width: 65vw;
     height: auto;
     display: block;
     margin: auto;
+    /* display: inline-block; */
+    text-align: center;
   }
 }
 
@@ -55,11 +66,5 @@ onMounted(() => addLinkToSVGElements());
     display: block;
     margin: auto;
   }
-}
-
-#instagram-logo {
-  border-style: solid;
-  border-color: black;
-  border-width: 10px;
 }
 </style>
