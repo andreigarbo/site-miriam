@@ -33,9 +33,19 @@ const router = createRouter({
       component: () => import('../views/PersonalWorkView.vue'),
     },
     {
+      path: '/professionalwork',
+      name: 'professional work',
+      component: () => import('../views/ProfessionalWorkView.vue'),
+    },
+    {
       path: '/cv',
       name: 'cv',
       component: () => import('../views/CVView.vue'),
+    },
+    {
+      path: '/prajeldaisybiscoff',
+      name: 'prajeldaisybiscoff',
+      component: () => import('../views/CatEasterEgg.vue'),
     },
     {
       path: '/:catchAll(.*)*',

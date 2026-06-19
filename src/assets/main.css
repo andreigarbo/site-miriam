@@ -1,4 +1,5 @@
 @import './base.css';
+@import './colors.css';
 
 #app {
   display: block;

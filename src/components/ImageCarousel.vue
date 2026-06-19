@@ -67,6 +67,11 @@ function switchImageNext() {
 </template>
 
 <style>
+button {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+}
 #carousel-container {
   display: flex;
   flex-direction: column;
@@ -83,6 +88,8 @@ function switchImageNext() {
 
 .chevron {
   background-color: rgb(127, 127, 127);
+  border-radius: 5px;
+  opacity: 50%;
   width: auto;
 }
 
@@ -109,6 +116,11 @@ function switchImageNext() {
 }
 
 @media (min-width: 600px) {
+  button {
+    padding: 200px;
+    margin: -200px;
+  }
+
   .chevron-button:hover {
     opacity: 30%;
   }
@@ -141,6 +153,11 @@ function switchImageNext() {
 }
 
 @media only screen and (max-width: 600px) {
+  button {
+    padding: 100px;
+    margin: -100px;
+  }
+
   .chevron {
     height: 1rem;
   }

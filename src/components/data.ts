@@ -45,7 +45,7 @@ function buildVisualDevGridItem(
     //PROD config
 
     //DEV Config
-    // thisCarousel.push(key);
+    //thisCarousel.push(key);
     //DEV Config
   }
 
@@ -79,8 +79,9 @@ function loadVisualDevMedia(): visualDevGridItem[] {
     buildVisualDevGridItem('grid', gridDiscotecaPathObject, 'Discoteca Universul', '60vw', 'auto', [
       'a a a',
       'b b b',
-      'c d e',
-      'f g h',
+      'c c c',
+      'd e f',
+      'g h i',
     ]),
   );
 
@@ -105,4 +106,21 @@ function loadVisualDevMedia(): visualDevGridItem[] {
   return visualDevGridObject;
 }
 
-export { loadVisualDevMedia, loadPersonalWorkMedia };
+function loadCatMedia(): visualDevGridItem[] {
+  const catEasterEggGridObject: visualDevGridItem[] = new Array<visualDevGridItem>();
+
+  const gridCatPathObject = import.meta.glob('/src/assets/images/cats/*');
+  catEasterEggGridObject.push(
+    buildVisualDevGridItem('grid', gridCatPathObject, 'Cats!', '60vw', 'auto', [
+      'a b c',
+      'd e f',
+      'g h i',
+      'j k l',
+      'm n o',
+    ]),
+  );
+
+  return catEasterEggGridObject;
+}
+
+export { loadVisualDevMedia, loadPersonalWorkMedia, loadCatMedia };
