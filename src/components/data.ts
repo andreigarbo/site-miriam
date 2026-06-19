@@ -35,17 +35,17 @@ function buildVisualDevGridItem(
 
   for (const key in pathObject) {
     //PROD config
-    // const thisPath = key
-    //   .split('/')
-    //   .filter((x, i) => i >= 3)
-    //   .join('/');
+    const thisPath = key
+      .split('/')
+      .filter((x, i) => i >= 3)
+      .join('/');
 
-    // const thisUrl = new URL(thisPath, import.meta.url).href.replace('assets/', '');
-    // thisCarousel.push(thisUrl);
+    const thisUrl = new URL(thisPath, import.meta.url).href.replace('assets/', '');
+    thisCarousel.push(thisUrl);
     //PROD config
 
     //DEV Config
-    thisCarousel.push(key);
+    //thisCarousel.push(key);
     //DEV Config
   }
 
